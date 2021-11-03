@@ -57,8 +57,36 @@ VALUES
 ('http://1.jpg', 4),
 ('http://2.jpg', 4)
 
+SELECT \* FROM photos WHERE user_id = 4
 
-SELECT * FROM photos WHERE user_id = 4
-
-SELECT  * FROM photos
+SELECT \* FROM photos
 JOIN users ON users.id = photos.user_id
+
+SELECT url , username FROM photos
+JOIN users ON users.id = photos.user_id
+
+# delete table
+
+DROP TABLE table_name
+
+# on delete cascade
+
+is to delete the recourd with it's relations in other tables
+
+CREATE TABLE photos(
+id SERIAL PRIMARY KEY,
+url VARCHAR(200),
+user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+)
+
+# on delete set null
+
+set the foren id of the relation no null
+
+CREATE TABLE photos(
+id SERIAL PRIMARY KEY,
+url VARCHAR(200),
+user_id INTEGER REFERENCES users(id) ON DELETE SET NULL
+)
+
+
