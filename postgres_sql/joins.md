@@ -106,3 +106,10 @@ with no match add null
 
 ![alt text](full-join.png "full-join")
 
+FROM   => is the right table 
+
+JOIN   => is the left table
+
+
+
+15
