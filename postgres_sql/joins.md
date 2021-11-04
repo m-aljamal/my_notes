@@ -64,6 +64,7 @@ JOIN photos ON photos.id = c.photo_id
   
 # inner join 
 
+only match will be added
 
 SELECT url, username 
 FROM photos
@@ -81,3 +82,27 @@ INNER JOIN users ON users.id = photos.user_id
 when there is no match in two tables the rwos will drop
 
 ![alt text](inner.png "inner")
+
+# left Outer join
+
+if any from photos which is the left table doesn't match to the users will not drop it
+
+![alt text](left-outer-join.png "left-outer-join")
+
+photos will not be droped if there is no match with user
+
+
+# Right Outer Join
+
+take all of the right table and include them  even if there is no match with left and create null for no match from left
+
+![alt text](right-outer-join.png "right-outer-join")
+
+# full join
+
+give everything 
+
+with no match add null
+
+![alt text](full-join.png "full-join")
+
