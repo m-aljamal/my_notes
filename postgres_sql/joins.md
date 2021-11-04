@@ -37,3 +37,47 @@ SELECT contents, url
 FROM comments
 JOIN photos ON photos.id = comments.photo_id
 
+
+
+in this example we can flip the comments and photos => FROM photos JOIN photos same result 
+
+SELECT contents, url
+FROM comments
+JOIN photos ON photos.id = comments.photo_id
+
+
+if the tables containes the same row like id => will get the ambiguous error message  
+
+if there is a dublicated colmns name =>   select with photos.id  or  comments.id
+
+SELECT contents, url, photos.id, 
+FROM comments
+JOIN photos ON photos.id = comments.photo_id
+
+- naming:
+
+SELECT contents, url, photos.id, 
+FROM comments AS c                        => or just p with no AS
+JOIN photos ON photos.id = c.photo_id
+
+
+  
+# inner join 
+
+
+SELECT url, username 
+FROM photos
+JOIN users ON users.id = photos.user_id 
+
+when using JOIN by itself is by defualt an inner join
+
+can be JOIN users ON users.id = photos.user_id 
+
+OR 
+
+INNER JOIN users ON users.id = photos.user_id 
+
+
+when there is no match in two tables the rwos will drop
+
+![alt text](inner.png "inner")
