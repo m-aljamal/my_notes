@@ -302,3 +302,4 @@ docker image tag 317a mohammad/react-app:2      // 2 is the name of tag anything
 to push the image
 
 docker push mohammad/react-app:2 
+

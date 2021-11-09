@@ -1,6 +1,6 @@
 - docker ps
 
-list all docker
+list all running docker images
 
 
 -  docker ps -a
