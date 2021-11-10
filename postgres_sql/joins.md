@@ -118,4 +118,19 @@ JOIN photos ON photos.id = comments.photo_id
 WHERE comments.user_id = photos.user_id
 
 
-19
+# three way join 
+
+join three table need info from comments , photo, users
+
+
+SELECT url, contents, username
+FROM comments
+JOIN photos ON photos.id = comments.photo_id 
+JOIN users ON users.id = comments.user.user_id AND users.id = photos.user_id;
+
+
+
+SELECT title, name, rating 
+FROM reviews
+JOIN books ON books.id = reviews.book._id
+JOIN authors ON authors.id = books.author_id AND author.id = reviews.reviewer_id  
