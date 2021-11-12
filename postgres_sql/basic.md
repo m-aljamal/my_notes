@@ -95,3 +95,7 @@ DELETE FROM name_of_table WHERE name = 'Kilis'
 # update record 
 
 UPDATE table_name SET name = 'Istanbul' WHERE name = 'Kilis'
+
+
+
+
