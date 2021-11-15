@@ -87,3 +87,8 @@ FROM comments
 WHERE photo_id < 3
 GROUP BY user_id
 HAVING COUNT(*) > 2
+
+
+- count the number of recourds in users table:
+
+SELECT  COUNT(*) FROM users

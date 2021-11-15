@@ -99,3 +99,20 @@ UPDATE table_name SET name = 'Istanbul' WHERE name = 'Kilis'
 
 
 
+
+
+INSERT INTO users (first_name, last_name)
+VALUES
+("Lva", "Otri"),
+("Adnan", "Aljamal"),
+("Yaman", "Jelani"),
+("Waled", "Alhassan"),
+("Mustafa", "Otri"),
+("Juri", "Aljamal"),
+("Ines", "Taybi")
+
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,  
+first_name VARCHAR(50),
+last_name VARCHAR(50)  
+)
