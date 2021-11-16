@@ -52,4 +52,17 @@ OFFSET 4
 skip the first 4 recourds and return the rest. 
 
 
-- limit make sure that we only get some supsifc number of recourds 
+- limit make sure that we only get some specific number of recourds 
+
+SELECT *  FROM users LIMIT 2
+
+SELECT * 
+FROM products
+ORDER BY price DESC 
+LIMIT 4     => take the first 4 recourd
+OFFSET 1     => remove the first recourd
+
+
+
+
+ 
