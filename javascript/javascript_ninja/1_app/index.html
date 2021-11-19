@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first{
+            color: red;
+             background-color: aqua;
+        }
+        #second{
+            color: blue;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <ul id="first"></ul>
+    <script>
+        function addMessage(element, message){
+             const messageElement = document.createElement('li');
+             messageElement.textContent = message;
+                element.appendChild(messageElement);
+        }
+        const first = document.getElementById('first');
+        addMessage(first, 'Page Loading');
+    </script>
+    <ul id="second"></ul>
+    <script>
+        document.body.addEventListener('mousemove', function(){
+            let secound = document.getElementById('second');
+            addMessage(secound, 'Mouse Moving');
+        })
+
+        document.body.addEventListener("click", function(){
+         let secound = document.getElementById('second');
+            addMessage(secound, 'click'); 
+        })
+    </script>
+</body>
+</html>
