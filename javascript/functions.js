@@ -289,4 +289,41 @@ const booksObjRating = booksArr.reduce((rates, book) => {
   return rates
 }, {});
 
-console.log(booksObjRating);
+// console.log(booksObjRating);
+
+
+const spread = (...rest) =>{
+  console.log({x});
+  console.log({rest});
+}
+// spread("test");
+
+const testString = (a, b, c) =>  {
+  console.log(a, b, c);
+
+}
+const string = 'thi'
+
+// testString(...string);
+
+const sum = (...rest) => {
+  console.log(rest);
+  return rest.reduce((acc, curr) => acc + curr);
+}
+// console.log( sum(1,2,3,4,5,6,7,8,9,10,11,12));
+
+const raceResults = ["first", 'secount', 'third']
+
+const [gold,...other] = raceResults;
+// console.log({gold, other});
+
+const persons={
+  name: 'John',
+  age: 30,
+
+}
+
+const {age:manAge} = persons;
+// console.log(manAge);
+
+ 
