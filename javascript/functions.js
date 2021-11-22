@@ -286,44 +286,85 @@ const booksObjRating = booksArr.reduce((rates, book) => {
   const key = Math.floor(book.rating);
   if (!rates[key]) rates[key] = [];
   rates[key].push(book);
-  return rates
+  return rates;
 }, {});
 
 // console.log(booksObjRating);
 
-
-const spread = (...rest) =>{
-  console.log({x});
-  console.log({rest});
-}
+const spread = (...rest) => {
+  console.log({ x });
+  console.log({ rest });
+};
 // spread("test");
 
-const testString = (a, b, c) =>  {
+const testString = (a, b, c) => {
   console.log(a, b, c);
-
-}
-const string = 'thi'
+};
+const string = "thi";
 
 // testString(...string);
 
 const sum = (...rest) => {
   console.log(rest);
   return rest.reduce((acc, curr) => acc + curr);
-}
+};
 // console.log( sum(1,2,3,4,5,6,7,8,9,10,11,12));
 
-const raceResults = ["first", 'secount', 'third']
+const raceResults = ["first", "secount", "third"];
 
-const [gold,...other] = raceResults;
+const [gold, ...other] = raceResults;
 // console.log({gold, other});
 
-const persons={
-  name: 'John',
+const persons = {
+  name: "John",
   age: 30,
+};
 
-}
-
-const {age:manAge} = persons;
+const { age: manAge } = persons;
 // console.log(manAge);
 
- 
+const math = {
+  add: (x, y) => x + y,
+  sub: (x, y) => x - y,
+  mul(x, y) {
+    return x * y;
+  },
+};
+// console.log(math.add(1,2));
+// console.log(math.sub(1,2));
+// console.log(math.mul(1,2));
+
+// console.log(this);
+
+function testThis() {
+  console.log("say hi");
+  console.log(this);
+}
+// console.log(testThis());
+
+const person = {
+  first: "name",
+  last: "secound",
+
+  fullName() {
+    console.log(this);
+    console.log(this.first + " " + this.last);
+  },
+};
+// console.log(person.fullName());
+
+const fraces = {
+  phrases: ["hi", "hello", "bye", "see", "goodbye", "thanks"],
+  pickPhrase() {
+    const { phrases } = this;
+    const idx = Math.floor(Math.random() * phrases.length);
+    return phrases[idx];
+  },
+  start() {
+    setInterval(() => console.log(this.pickPhrase()), 1000);
+  },
+  stop() {
+    clearInterval(this.start);
+  },
+};
+// console.log(fraces.start());
