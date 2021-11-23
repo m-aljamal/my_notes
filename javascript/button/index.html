@@ -6,15 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <button id="button">clickme</button>
-    <button id='another'>another button</button>
+    <button style="position: absolute; top: 10px; left: 10px;">Try to click me</button>
+    
+
     <script>
-            const button = document.getElementById('button').addEventListener("click", function(){
-                alert('clicked')
-            })
-            const another = document.getElementById('another').addEventListener('click', ()=>{
-                alert('another button')
-            })
+           const btn = document.querySelector('button');
+           
+           btn.addEventListener('mouseover', function(){
+                const nW = Math.floor(Math.random() * window.innerWidth);
+                const nH = Math.floor(Math.random() * window.innerHeight);
+               btn.style.left = `${nW}px`;
+               btn.style.top = `${nH}px`;
+           });
+
+           btn.addEventListener('click', function(){
+               btn.innerText = 'You clicked me';
+               document.body.style.backgroundColor = 'green';
+           });
     </script>
 </body>
 </html>
