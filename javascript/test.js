@@ -1,11 +1,19 @@
-function stockList(listOfArt = [], listOfCat = []) {
+const findAnagrams = (str1, str2) => {
+  if (str1.length !== str2.length) return false;
+  const str1Obj = {};
+  const str2Obj = {};
+  for (let i = 0; i < str1.length; i++) {
+    str1Obj[str1[i]] = ++str1Obj[str1[i]] || 1;
+    str2Obj[str2[i]] = ++str2Obj[str2[i]] || 1;
+  }
   
-// console.log(+foundArt[0].replace(/\D+/g, ' ').trim().split(' ')[0]);
-  // result = `(${A}:{200}) - (${B}: ${1140})`
-  //listOfCat.includes('A')
-}
-const te = stockList(
-  ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"],
-  ["A", "B",]
-);
-console.log(te);
+  for (let key in str1Obj) {
+    if (str1Obj[key] !== str2Obj[key]) return false;
+  }
+  return true;
+};
+console.log(findAnagrams("abcd", "dcba"));
+console.log(findAnagrams("", ""));
+console.log(findAnagrams("aaz", "zza"));
+console.log(findAnagrams("anagram", "nagaram"));
+console.log(findAnagrams("rat", "car"));
